@@ -1,0 +1,19 @@
+{
+  "name": "adom-csv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon app --watch src/index.adom --watch src/main.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adom-js": "^0.17.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

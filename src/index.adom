@@ -1,0 +1,57 @@
+let styles = file 'main.css'
+let csvParse = file '../parse.js'
+let parsed = 'json data output...'
+let error = ''
+--
+const parse = require('../parse.js')
+
+const submit = (e) => {
+  e.preventDefault()
+  const csv = e.target.csvInput.value
+  const delimiter = e.target.delimiter.value
+
+  if(!delimiter){
+    error = 'please specify a delimiter'
+    return
+  }
+
+  error = ""
+  parsed = JSON.stringify(parse(csv, delimiter), undefined, 2) 
+}
+--
+
+html [
+  head [
+    style "{{styles}}"
+  ]
+  body root [
+    div.header [
+      h1 "csv parser"
+      p "built by jacob g using adom.js"
+    ]
+    
+    div.container [
+      form on:submit="submit($e)"[
+        div.container[
+          div.csv-container [
+            textarea name="csvInput"  type="text" []
+            div [
+              "delimiter: "
+              input name="delimiter" type="text" []
+            ]
+            
+          ]
+
+          div.parsed-output [
+            textarea value="{{parsed}}"   type="text" []
+            button type="submit" "PARSE"
+          ]
+        ]
+        
+      ]
+    ]
+    
+    p.error "{{error}}"
+  ]
+]
+

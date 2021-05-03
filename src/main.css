@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Helvetica, sans-serif;
+    background-color: #111111;
+    color: #f2f2f2;
+}
+
+h1{
+    font-size: 1.5rem;
+}
+
+textarea{
+    color: #f2f2f2;
+    background-color: #111111;
+    resize: none;
+    width: 25rem;
+    height: 30rem;
+    border: 1px solid #01FF70;
+    border-radius: 3px;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+input{
+    color: #f2f2f2;
+    background-color: #111111;
+    border: 1px solid #01FF70;
+    height: 2rem;
+    width: 5rem;
+}
+
+button {
+    box-sizing: border-box;
+    width: 5rem;
+    height: 2rem;
+    margin-right: 5px;
+    background-color: #01FF70;
+    border: none;
+    color: #111111;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #00bb51;
+}
+
+.parsed-output{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+}
+
+.csv-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.csv-container div {
+    margin-left: 5px;
+}
+
+.container textarea {
+    margin: 5px;
+}
+
+.error{
+    color: red;
+    justify-content: center;
+    display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
