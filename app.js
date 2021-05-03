@@ -1,7 +1,8 @@
 const Adom = require('adom-js');
+const path = require('path')
 const compiler = new Adom({
     cache: true,
-    root: 'src'
+    root: path.resolve(__dirname ,'src')
 });
  
 require('http').createServer(function (req, res) {
